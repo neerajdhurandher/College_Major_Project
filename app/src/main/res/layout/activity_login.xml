@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/night_view"
+    tools:context=".LoginActivity"
+    android:id="@+id/loginpageid">
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_button"
+        android:layout_width="@dimen/two_hundred_Dimen"
+        android:layout_height="@dimen/seventy_Dimen"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/twenty_seven_Dimen"
+        android:layout_marginTop="@dimen/three_hundred_twenty_Dimen"
+        android:textSize="@dimen/thirty_SP_Dimen" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="@dimen/one_hundred_eighty_Dimen"
+        android:layout_height="@dimen/sixty_Dimen"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/fifty_Dimen"
+        android:layout_marginTop="@dimen/four_hundred_Dimen"
+        android:paddingStart="@dimen/ten_Dimen"
+        android:paddingEnd="@dimen/zero_Dimen"
+        android:textSize="@dimen/twenty_SP_Dimen"
+        android:text="@string/T_C"
+        android:background="@drawable/textview_trans_bg"
+        android:textColor="@color/cardview_white"
+        android:buttonTint="@color/cardview_white"
+        />
+
+</RelativeLayout>
