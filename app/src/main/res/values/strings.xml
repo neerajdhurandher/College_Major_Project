@@ -60,7 +60,7 @@
     <string name="title_activity_basic__trail_">Basic_Trail_Activity</string>
 
     <string name="pendingfollowreq">Pending Follow Requests</string>
-    <string name="nofollowreq">There is no any Follow Request Pending</string>
+    <string name="nofollowreq">Sorry, No Follow Request Pending</string>
     <string name="nofollower">You haven\'t any Follower \n Here All Users </string>
 
     <string name="findNewyaar">Find New Yaar </string>
@@ -93,7 +93,7 @@
     <string name="neeraj_dev_txt">neeraj.dev@yaari.in</string>
     <string name="submmit_txt">Submmit</string>
     <string name="usernameS">Username</string>
-    <string name="click_for_find_new_yaar_txt">click for Find new Yaar</string>
+    <string name="click_for_find_new_yaar_txt">Find new Yaar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -108,7 +108,7 @@
     <string name="following_txt">following</string>
 
     <string name="single_txt">Single</string>
-    <string name="akhand_single_txt">Akhand Single</string>
+    <string name="akhand_single_txt">Always Single</string>
     <string name="in_relationship_txt">In Relationship</string>
     <string name="married_txt">Married</string>
     <string name="engaged_txt">Engaged</string>

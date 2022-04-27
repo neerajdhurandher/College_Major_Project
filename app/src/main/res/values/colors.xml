@@ -9,7 +9,10 @@
     <color name="gery">#FF808080</color>
     <color name="green">#00AC00</color>
     <color name="dark_blue">#3700B3</color>
-
-
-
+    <color name="fade_black">#A4000000</color>
+    <color name="secondary">#FFEB3B</color>
+    <color name="danger">#EBFF0000</color>
+    <color name="blue_accent">#8377C5</color>
+    <color name="blue_bg">#AEADA1ED</color>
+    <color name="success">#09A335</color>
 </resources>
