@@ -79,14 +79,16 @@
             android:id="@+id/story_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/five_Dimen"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/five_Dimen"
+            android:layout_marginTop="@dimen/five_Dimen"
+            android:layout_marginEnd="@dimen/five_Dimen"
+            android:layout_marginBottom="@dimen/five_Dimen"
+            android:layout_toEndOf="@id/story_photo"
             android:text="@string/usernameS"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="@dimen/twenty_SP_Dimen"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/story_photo"
-            />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -128,13 +130,18 @@
 
     <ImageView
         android:id="@+id/story_delete_id"
-        android:layout_width="@dimen/sixty_Dimen"
+        android:layout_width="@dimen/forty_Dimen"
         android:layout_height="@dimen/sixty_Dimen"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/ten_Dimen"
-        android:padding="@dimen/three_Dimen"
+        android:layout_marginStart="@dimen/ten_Dimen"
+        android:layout_marginTop="@dimen/ten_Dimen"
+        android:layout_marginEnd="@dimen/ten_Dimen"
+        android:layout_marginBottom="@dimen/ten_Dimen"
         android:background="@color/cardview_white"
         android:src="@drawable/ic_delete"
+        android:hapticFeedbackEnabled="true"
+        android:tint="@color/red"
+
         />
 
 

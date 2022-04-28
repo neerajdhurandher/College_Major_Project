@@ -7,18 +7,25 @@
         <entry key="..\:/Padhai_Items/Lecture video/Android Stuffs/Yaari Android Video/old app resource/26 sep 2020/AppTrail4/app/src/main/res/layout/fragment_home_frg.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/about_me_bg.xml" value="0.3465" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/aboutshowbody.xml" value="0.3465" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/buttonsinprofile.xml" value="0.3325" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/circle_online.xml" value="0.3325" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/circle_story_posted.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/coustem_input.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/custom_input_accent_blue.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/custom_input_accent_fade_blue.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/custom_input_without_stoke.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/custom_question_textbox.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/custom_textbox.xml" value="0.3325" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/ic_delete.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/profleshowbottom.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/rounded_btn_main.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/rounded_btn_success.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/searchboxlayout.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/simple_text.xml" value="0.3465" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/textview_trans_bg.xml" value="0.3325" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/toolbarstyle.xml" value="0.3325" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/drawable/white_bg_rounded_corner.xml" value="0.3325" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout-v28/activity_story_view_.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_about.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_add__story_.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_edit__profile_.xml" value="0.34479166666666666" />
@@ -29,6 +36,26 @@
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_main.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_naya_poost.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_next__user__profile_.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_personal__chat_.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_post__comments_.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_story_seen_users_.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_story_view_.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/activity_welcome_.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/fragment_chat_frg.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/fragment_home_frg.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/fragment_new_post_frg.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/fragment_profile_frg.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/fragment_search_frg.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_add_story_view.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_chat_reciver_left.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_chat_sender_right.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_chatlist.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_posts.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_req_pending_users.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_show_comment.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_story_view.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/layout/row_users.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Himanshu/AndroidStudioProjects/Yaari_Final/app/src/main/res/menu/bottom_nav_menu.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/neera/AndroidStudioProjects/Yaari_new/app/src/main/res/layout-v28/activity_story_view_.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/neera/AndroidStudioProjects/Yaari_new/app/src/main/res/layout/activity_about.xml" value="0.11822916666666666" />
         <entry key="..\:/Users/neera/AndroidStudioProjects/Yaari_new/app/src/main/res/layout/activity_login.xml" value="0.25" />

@@ -74,7 +74,8 @@
             android:layout_marginEnd="@dimen/five_Dimen"
             android:text="@string/declinebtn"
             android:textAlignment="center"
-            android:background="#F65959"
+            android:background="@drawable/rounded_btn_danger"
+            android:textColor="@color/white"
 
             />
         <Button
@@ -88,7 +89,8 @@
             android:text="@string/acceptbtn"
             android:textAlignment="center"
             android:textSize="@dimen/fifteen_SP_Dimen"
-            android:background="#5D78E8"
+            android:background="@drawable/rounded_btn_main"
+            android:textColor="@color/white"
 
             />
 

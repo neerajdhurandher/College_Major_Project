@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +8,6 @@
     app:cardCornerRadius="@dimen/two_Dimen"
     app:cardElevation="@dimen/two_Dimen"
     app:cardBackgroundColor="@color/cardview_white"
-    app:contentPadding="@dimen/one_Dimen"
     >
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarId"
@@ -250,12 +250,15 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/thirty_five_Dimen"
         android:text="@string/commenttxt"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:drawablePadding="@dimen/ten_Dimen"
-        android:background="@color/red"
+        android:background="@color/grey"
         android:padding="@dimen/five_Dimen"
+        android:paddingStart="@dimen/ten_Dimen"
         android:textSize="@dimen/twenty_SP_Dimen"
-        app:drawableStartCompat="@drawable/ic_comment_2" />
+            app:drawableStartCompat="@drawable/ic_comment_2"
+            tools:ignore="RtlSymmetry"
+            app:drawableTint="@color/white" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/post_recycleerView_show_comment"

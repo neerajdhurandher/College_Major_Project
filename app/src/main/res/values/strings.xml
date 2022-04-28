@@ -53,7 +53,7 @@
     <string name="unfollow">Unfollow</string>
     <string name="acceptbtn">Accept</string>
     <string name="declinebtn">Decline</string>
-    <string name="followerstxt">Follower</string>
+    <string name="followerstxt">Followers</string>
     <string name="follow_req_txt">Follow Requests</string>
     <string name="poststxt">Posts</string>
     <string name="detailsnotAvailabel">Details Not Available</string>
@@ -61,7 +61,7 @@
 
     <string name="pendingfollowreq">Pending Follow Requests</string>
     <string name="nofollowreq">Sorry, No Follow Request Pending</string>
-    <string name="nofollower">You haven\'t any Follower \n Here All Users </string>
+    <string name="nofollower">You haven\'t have any follower \n Here are all Users </string>
 
     <string name="findNewyaar">Find New Yaar </string>
 
@@ -73,7 +73,7 @@
     <string name="currentTime">Current Time</string>
 
     <string name="liketxt">Like</string>
-    <string name="commenttxt">Comment</string>
+    <string name="commenttxt">Comments</string>
     <string name="bioS">Bio</string>
     <string name="timestamp">Time</string>
     <string name="write_comment_txt">Write Comment here</string>
@@ -82,7 +82,7 @@
     <string name="view_all_txt">View all</string>
     <string name="read_all_comments_txt">Read all Comments</string>
     <string name="made_in_india_txt">Made in India</string>
-    <string name="nee_dhu_txt">Neeraj Dhurandher</string>
+    <string name="nee_dhu_txt">Team Yaari</string>
 
     <string name="how_was_your_experience_txt">How was your Experience</string>
     <string name="write_here_txt">Write here....</string>
