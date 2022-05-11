@@ -11,6 +11,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apptrail4.Adapter_Show_Post;
+import com.example.apptrail4.Adapter_Story;
+import com.example.apptrail4.ModelShowPost;
+import com.example.apptrail4.ModelStory;
+import com.example.apptrail4.ModelUser;
+import com.example.apptrail4.R;
 import com.example.apptrail4.notification.Token;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

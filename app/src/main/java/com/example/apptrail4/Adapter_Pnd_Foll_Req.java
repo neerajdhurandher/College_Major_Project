@@ -93,7 +93,7 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
 
 
                 String Next_Person_Uid = userUid;
-                Intent gotoNextPersonProfile = new Intent(context,Next_User_Profile_Activity.class);
+                Intent gotoNextPersonProfile = new Intent(context, Next_User_Profile_Activity.class);
                 gotoNextPersonProfile.putExtra("Next_Person_Uid_Var",Next_Person_Uid);
                 gotoNextPersonProfile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(gotoNextPersonProfile);

@@ -6,12 +6,8 @@
         />
 
     <solid android:color="@color/colorPrimary" />
-    <padding android:left="1dp"
-        android:top="1dp"
-        android:right="1dp"
-        android:bottom="1dp"
-        />
+    <padding android:left="8dp" />
 
-    <corners android:bottomRightRadius="5dip" android:bottomLeftRadius="5dip"
-        android:topLeftRadius="5dip" android:topRightRadius="5dip" />
+
+    <corners android:radius="@dimen/ten_Dimen" />
 </shape>

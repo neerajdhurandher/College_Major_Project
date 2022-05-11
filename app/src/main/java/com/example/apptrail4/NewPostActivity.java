@@ -5,10 +5,13 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,11 +41,13 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class NayaPoostActivity extends AppCompatActivity {
+public class NewPostActivity extends AppCompatActivity {
 
     EditText txtaboutphoto;
     TextView usernameTv, bioTv, currentTime;
@@ -52,11 +57,12 @@ public class NayaPoostActivity extends AppCompatActivity {
     FirebaseUser currentUser;
     String currentUserUID, aboutPhoto_String;
     ProgressDialog pd;
-    String usernametxt,userIamge_str,userIamge_str2,bio_get;
+    String userNameTxt,userImageStr,bio_get;
 
     String storagePermission[];
     public static final int STORAGE_REQUEST_CODE = 200;
     public static final int IMAGE_PICK_GALLERY_REQUEST_CODE = 300;
+    private static final String TAG = "NewPostActivity";
 
     Uri uploadImageURI = null;
 
@@ -97,18 +103,18 @@ public class NayaPoostActivity extends AppCompatActivity {
 
         // set user detsils
 
-        usernametxt = "" + currentUser.getDisplayName();
+        userNameTxt = "" + currentUser.getDisplayName();
 
-        userIamge_str = ""+ currentUser.getPhotoUrl();     // inuse
+        userImageStr = ""+ currentUser.getPhotoUrl();     // inuse
 
 
-        usernameTv.setText(usernametxt);
+        usernameTv.setText(userNameTxt);
 
         currentTime.setText(" at " + currentdateTime);
 
 
         try {
-            Glide.with(getApplicationContext()).load(userIamge_str).circleCrop().into(userDp);
+            Glide.with(getApplicationContext()).load(userImageStr).circleCrop().into(userDp);
         }
         catch (Exception e){
             Glide.with(getApplicationContext()).load(R.drawable.user_icon).circleCrop().into(userDp);
@@ -171,23 +177,11 @@ public class NayaPoostActivity extends AppCompatActivity {
           });
 
 
-
-
-
-
-
-
-
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 aboutPhoto_String = txtaboutphoto.getText().toString();
-
-                uploadPost(aboutPhoto_String,String.valueOf(uploadImageURI));
-
-
-
+                uploadPost(aboutPhoto_String,uploadImageURI);
             }
         });
 
@@ -198,19 +192,31 @@ public class NayaPoostActivity extends AppCompatActivity {
 
     }
 
-    private void uploadPost(final String aboutPhoto_string, String uri) {
+    private void uploadPost(final String aboutPhoto_string, Uri uri) {
 
         pd.setMessage("Publishing...");
         pd.show();
 
         final String timestamp = String.valueOf(System.currentTimeMillis());
 
-        String filepathAndname = "Posts/"+ "post_"+ currentUserUID +"_"+ timestamp;
-        // we can add currentuser name in filename for better underastanding  and file handleling
+        String filepathAndName = "Posts/"+ "post_"+ currentUserUID +"_"+ timestamp;
+        // we can add current user name in filename for better understanding  and file handling
 
-        StorageReference post_storageReference = FirebaseStorage.getInstance().getReference().child(filepathAndname);
+        byte[] img_bytes_data;
+        try {
+            Bitmap image_bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            image_bitmap.compress(Bitmap.CompressFormat.PNG, 30, baos);
+            img_bytes_data = baos.toByteArray();
+        }catch (IOException ioException){
+            Log.e(TAG,"Error :- "+ioException.getMessage());
+            Toast.makeText(getApplicationContext(),"Image uploading failed",Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        post_storageReference.putFile(Uri.parse(uri)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        StorageReference post_storageReference = FirebaseStorage.getInstance().getReference().child(filepathAndName);
+
+        post_storageReference.putBytes(img_bytes_data).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
@@ -239,10 +245,10 @@ public class NayaPoostActivity extends AppCompatActivity {
                          @Override
                          public void onSuccess(Void aVoid) {
                              pd.dismiss();
-                             Toast.makeText(NayaPoostActivity.this, "Post Published", Toast.LENGTH_SHORT).show();
+                             Toast.makeText(NewPostActivity.this, "Post Published", Toast.LENGTH_SHORT).show();
 
 
-                                Intent updateandgohome = new Intent(NayaPoostActivity.this,HomeActivity.class);
+                                Intent updateandgohome = new Intent(NewPostActivity.this, HomeActivity.class);
                                    startActivity(updateandgohome);
                                    finish();
 
@@ -251,7 +257,7 @@ public class NayaPoostActivity extends AppCompatActivity {
                          @Override
                          public void onFailure(@NonNull Exception e) {
                              pd.dismiss();
-                             Toast.makeText(NayaPoostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                             Toast.makeText(NewPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
                          }
                      });
@@ -264,7 +270,7 @@ public class NayaPoostActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         pd.dismiss();
-                        Toast.makeText(NayaPoostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NewPostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -296,7 +302,7 @@ public class NayaPoostActivity extends AppCompatActivity {
     private boolean checkStoragePermission() {
 
         boolean result_SP;
-        result_SP = ContextCompat.checkSelfPermission(NayaPoostActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
+        result_SP = ContextCompat.checkSelfPermission(NewPostActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
 
         return result_SP;
     }
@@ -318,7 +324,7 @@ public class NayaPoostActivity extends AppCompatActivity {
             }
             else {
 
-                Toast.makeText(NayaPoostActivity.this, "Please Enable Storage Permission",Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewPostActivity.this, "Please Enable Storage Permission",Toast.LENGTH_SHORT).show();
             }
         }
 

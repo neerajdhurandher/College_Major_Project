@@ -107,7 +107,7 @@ public class chat_frg extends Fragment {
         goto_follower_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goto_follower_intent = new Intent(getActivity(),Follower_Activity.class);
+                Intent goto_follower_intent = new Intent(getActivity(), Follower_Activity.class);
                 startActivity(goto_follower_intent);
             }
         });
@@ -234,7 +234,7 @@ public class chat_frg extends Fragment {
 
         }
         else {
-            startActivity(new Intent(getActivity(),MainActivity.class));
+            startActivity(new Intent(getActivity(), FeedbackActivity.class));
             getActivity().finish();
 
 

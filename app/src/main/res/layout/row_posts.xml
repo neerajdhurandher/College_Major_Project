@@ -182,6 +182,7 @@
                     android:layout_marginBottom="@dimen/three_Dimen"
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
+                    android:background="@drawable/rounded_btn"
                     android:drawableStart="@drawable/ic_like_icon"
 
                     />
@@ -191,12 +192,14 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/liketxt"
+                    android:textColor="@color/white"
                     android:layout_marginTop="@dimen/three_Dimen"
                     android:layout_marginBottom="@dimen/three_Dimen"
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
                     android:drawableStart="@drawable/ic_liked_icon"
-
+                    android:drawableTint="@color/white"
+                    android:background="@drawable/rounded_btn_main"
                     />
 
                 <Button
@@ -210,8 +213,9 @@
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
                     android:drawableStart="@drawable/ic_comment_2"
-
+                    android:background="@drawable/rounded_btn"
                     />
+
 
 
             </LinearLayout>

@@ -17,14 +17,14 @@
         <activity android:name=".Add_Story_Activity" />
         <activity android:name=".Welcome_Activity" />
         <activity android:name=".Post_Comments_Activity" />
-        <activity android:name=".NayaPoostActivity" />
+        <activity android:name=".NewPostActivity" />
         <activity android:name=".FrequestsActivity" />
         <activity android:name=".Follower_Activity" />
         <activity android:name=".Personal_Chat_Activity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".Edit_Profile_Activity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".FeedbackActivity" />
         <activity android:name=".Next_User_Profile_Activity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

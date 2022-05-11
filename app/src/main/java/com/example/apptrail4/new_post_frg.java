@@ -281,7 +281,7 @@ public class new_post_frg extends Fragment {
                             Toast.makeText(getActivity(), "Post Published", Toast.LENGTH_SHORT).show();
 
 
-                            Intent updateandgohome = new Intent(getActivity(),HomeActivity.class);
+                            Intent updateandgohome = new Intent(getActivity(), HomeActivity.class);
                             startActivity(updateandgohome);
 
 

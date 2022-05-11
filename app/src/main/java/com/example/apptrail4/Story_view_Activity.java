@@ -25,8 +25,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -41,8 +44,8 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
 
 
     StoriesProgressView storiesProgressView;
-    ImageView image,story_photo;
-    TextView story_username;
+    ImageView story_image,story_user_image;
+    TextView story_username,story_created_time;
     LinearLayout seen_layout;
     TextView seen_count;
     ImageView story_delete;
@@ -50,8 +53,9 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
     FirebaseUser currentUser;
 
 
-    List<String> images;
+    List<String> imageList;
     List<String> story_Ids;
+    List<Long> storyTimeList;
     String user_Id;
 
     private View.OnTouchListener onTouchListener = new View.OnTouchListener() {
@@ -90,9 +94,10 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         storiesProgressView = findViewById(R.id.stories);
-        story_photo = findViewById(R.id.story_photo);
-        image = findViewById(R.id.story_image_view);
+        story_user_image = findViewById(R.id.story_user_image);
+        story_image = findViewById(R.id.story_image_view);
         story_username = findViewById(R.id.story_username);
+        story_created_time = findViewById(R.id.story_created_time);
 
         seen_layout = findViewById(R.id.seen_layout_id);
         seen_count = findViewById(R.id.seen_count_id);
@@ -139,11 +144,13 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
             @Override
             public void onClick(View v) {
                 Intent goto_story_view_users = new Intent(Story_view_Activity.this,Story_seen_users_Activity.class);
+//
+//                goto_story_view_users.putExtra("user_id", user_Id);
+//                goto_story_view_users.putExtra("story_id", story_Ids.get(counter));
+//
+//                startActivity(goto_story_view_users);
 
-                goto_story_view_users.putExtra("user_id", user_Id);
-                goto_story_view_users.putExtra("story_id", story_Ids.get(counter));
 
-                startActivity(goto_story_view_users);
 
 
             }
@@ -178,10 +185,10 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
     @Override
     public void onNext() {
         try {
-            Glide.with(getApplicationContext()).load(images.get(++counter)).into(image);
+            Glide.with(getApplicationContext()).load(imageList.get(++counter)).into(story_image);
         }
         catch (Exception e){
-            Glide.with(getApplicationContext()).load(R.drawable.ic_image).into(image);
+            Glide.with(getApplicationContext()).load(R.drawable.ic_image).into(story_image);
         }
 
         add_views(story_Ids.get(counter));
@@ -194,10 +201,10 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
         if ((counter-1)<0 )
             return;
         try {
-            Glide.with(getApplicationContext()).load(images.get(--counter)).into(image);
+            Glide.with(getApplicationContext()).load(imageList.get(--counter)).into(story_image);
         }
         catch (Exception e){
-            Glide.with(getApplicationContext()).load(R.drawable.ic_image).into(image);
+            Glide.with(getApplicationContext()).load(R.drawable.ic_image).into(story_image);
         }
 
         seen_user_count(story_Ids.get(counter));
@@ -233,15 +240,15 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
 
     private  void get_Stories(String user_Id){
 
-        images = new ArrayList<>();
+        imageList = new ArrayList<>();
         story_Ids = new ArrayList<>();
 
-        DatabaseReference story_db_ref = FirebaseDatabase.getInstance().getReference("Story").child(user_Id);
+        final DatabaseReference story_db_ref = FirebaseDatabase.getInstance().getReference("Story").child(user_Id);
 
         story_db_ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                images.clear();
+                imageList.clear();
                 story_Ids.clear();
 
                 for(DataSnapshot ds: snapshot.getChildren()){
@@ -252,24 +259,34 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
 
                     if (current_time > modelStory_1.getTime_start() && current_time < modelStory_1.getTime_end()){
 
-                        images.add(modelStory_1.getImage_url());
-
+                        imageList.add(modelStory_1.getImage_url());
                         story_Ids.add(modelStory_1.getStory_Id());
+                        storyTimeList.add(modelStory_1.getTime_start());
 
+
+                    }else {
+                        // delete story from db
+                        story_db_ref.child(modelStory_1.getStory_Id()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                            }
+                        });
                     }
 
                 }
-                storiesProgressView.setStoriesCount(images.size());
+                storiesProgressView.setStoriesCount(imageList.size());
                 storiesProgressView.setStoryDuration(5000L);
                 storiesProgressView.setStoriesListener(Story_view_Activity.this);
                 storiesProgressView.startStories(counter);
 
                 try {
-                    Glide.with(getApplicationContext()).load(images.get(counter)).into(image);
+                    Glide.with(getApplicationContext()).load(imageList.get(counter)).into(story_image);
                 }
                 catch (Exception e){
-                    Glide.with(getApplicationContext()).load(R.drawable.ic_image).into(image);
+                    Glide.with(getApplicationContext()).load(R.drawable.ic_image).into(story_image);
                 }
+
+                story_created_time.setText(getTimeInterval(storyTimeList.get(counter)));
 
                 add_views(story_Ids.get(counter));
                 seen_user_count(story_Ids.get(counter));
@@ -295,10 +312,10 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
                 ModelUser modelUser_2 = snapshot.getValue(ModelUser.class);
 
                 try {
-                    Glide.with(getApplicationContext()).load(modelUser_2.getImage()).circleCrop().into(story_photo);
+                    Glide.with(getApplicationContext()).load(modelUser_2.getImage()).circleCrop().into(story_user_image);
                 }
                 catch (Exception e){
-                    Glide.with(getApplicationContext()).load(R.drawable.user_icon).circleCrop().into(story_photo);
+                    Glide.with(getApplicationContext()).load(R.drawable.user_icon).circleCrop().into(story_user_image);
 
                 }
 
@@ -364,5 +381,10 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
 
     }
 
+    private String getTimeInterval(Long time){
+        Date date = new Date(time);
+        Format format = new SimpleDateFormat("yyyy MM dd HH:mm:ss");
+        return format.format(date);
+    }
 
 }

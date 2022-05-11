@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class FeedbackActivity extends AppCompatActivity {
 
 
     // FeedBack Form
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_feedback);
         currentuser = FirebaseAuth.getInstance().getCurrentUser();
         currentuserUID = currentuser.getUid();
 
@@ -111,13 +111,13 @@ public class MainActivity extends AppCompatActivity {
 
                 String thankyou_txt = "Thanks for your Feedback";
 
-                Toast.makeText(MainActivity.this, thankyou_txt, Toast.LENGTH_LONG).show();
+                Toast.makeText(FeedbackActivity.this, thankyou_txt, Toast.LENGTH_LONG).show();
                 feedback_form_Layout.setVisibility(View.GONE);
                 thanks_view_layout.setVisibility(View.VISIBLE);
 
 
 
-                Intent gotohome =  new Intent(MainActivity.this, HomeActivity.class);
+                Intent gotohome =  new Intent(FeedbackActivity.this, HomeActivity.class);
                 startActivity(gotohome);
 
 

@@ -47,6 +47,7 @@
 
     <string name="seen">seen</string>
     <string name="delivered">delivered</string>
+    <string name="viewer">Viewer</string>
 
 
     <string name="follow">Follow</string>

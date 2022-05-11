@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:animationCache="true"
     android:background="#F0F1F3"
-    tools:context=".MainActivity">
+    tools:context=".FeedbackActivity">
 
     <RelativeLayout
         android:id="@+id/thanks_view_layout"

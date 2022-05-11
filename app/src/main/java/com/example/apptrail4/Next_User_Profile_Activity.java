@@ -172,7 +172,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
                                //  accept follow button convert in chat button & on click that go to chat
 
-                                Intent gotochat = new Intent(Next_User_Profile_Activity.this,Personal_Chat_Activity.class);
+                                Intent gotochat = new Intent(Next_User_Profile_Activity.this, Personal_Chat_Activity.class);
                                 gotochat.putExtra("samnevaleuserkiUid",nextPersonUid);
                                 startActivity(gotochat);
                             }

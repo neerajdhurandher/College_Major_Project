@@ -96,7 +96,7 @@ public class Post_Comments_Activity extends AppCompatActivity {
         commentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotohome = new Intent(getApplicationContext(),HomeActivity.class);
+                Intent gotohome = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(gotohome);
             }
         });

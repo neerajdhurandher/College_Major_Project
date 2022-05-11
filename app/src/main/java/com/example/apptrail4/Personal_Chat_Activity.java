@@ -151,7 +151,7 @@ public class Personal_Chat_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String Next_Person_Uid = samnevaleuserkiUidget;
-                Intent gotoNextPersonProfile = new Intent(Personal_Chat_Activity.this,Next_User_Profile_Activity.class);
+                Intent gotoNextPersonProfile = new Intent(Personal_Chat_Activity.this, Next_User_Profile_Activity.class);
                 gotoNextPersonProfile.putExtra("Next_Person_Uid_Var",Next_Person_Uid);
                 startActivity(gotoNextPersonProfile);
             }
@@ -803,7 +803,7 @@ public class Personal_Chat_Activity extends AppCompatActivity {
 
         }
         else {
-            startActivity( new  Intent (this,LoginActivity.class));
+            startActivity( new  Intent (this, LoginActivity.class));
             Toast.makeText(this, ""+myUid+"  ", Toast.LENGTH_SHORT).show();
             Toast.makeText(this, ""+samnevaleuserkiUidget, Toast.LENGTH_SHORT).show();
             finish();
