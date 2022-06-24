@@ -206,7 +206,7 @@ public class profile_frg extends Fragment  {
         btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signOut();
+//                signOut();
 
             }
 

@@ -64,27 +64,16 @@
             android:id="@+id/story_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/five_Dimen"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/five_Dimen"
+            android:layout_marginTop="@dimen/five_Dimen"
+            android:layout_marginEnd="@dimen/five_Dimen"
+            android:layout_marginBottom="@dimen/five_Dimen"
+            android:layout_toEndOf="@id/story_user_image"
             android:text="@string/usernameS"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="@dimen/twenty_SP_Dimen"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/story_user_image"
-            />
-
-        <TextView
-            android:id="@+id/story_created_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/five_Dimen"
-            android:text="@string/currentTime"
-            android:textStyle="normal"
-            android:textColor="@color/grey"
-            android:textSize="@dimen/fifteen_SP_Dimen"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/story_username"
-            />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

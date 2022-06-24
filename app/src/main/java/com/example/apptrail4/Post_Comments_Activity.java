@@ -70,7 +70,7 @@ public class Post_Comments_Activity extends AppCompatActivity {
         postTime = findViewById(R.id.posttimeS);
 
         postedIamge = findViewById(R.id.postedImgaeId);
-        postedIamgeOpen = findViewById(R.id.postedImageOpenId);
+//        postedIamgeOpen = findViewById(R.id.postedImageOpenId);
         postDescripton = findViewById(R.id.photodeccriptionid);
         likecounter = findViewById(R.id.like_commentShowid);
         commentcounter = findViewById(R.id.comment_Count_Id);

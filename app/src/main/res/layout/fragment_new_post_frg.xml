@@ -119,7 +119,7 @@
                 android:id="@+id/uploadImageId"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/three_hundred_Dimen"
-                android:background="@drawable/custom_question_textbox"
+                android:background="#B9B8BA"
                 android:layout_marginLeft="@dimen/five_Dimen"
                 android:layout_marginRight="@dimen/five_Dimen"
                 android:layout_marginTop="@dimen/five_Dimen"

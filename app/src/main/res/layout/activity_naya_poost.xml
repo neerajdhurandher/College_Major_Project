@@ -135,7 +135,7 @@
                 android:gravity="start"
                 android:layout_marginLeft="@dimen/five_Dimen"
                 android:layout_marginRight="@dimen/five_Dimen"
-                android:layout_marginTop="@dimen/ten_Dimen"
+
                 android:paddingStart="@dimen/ten_Dimen"
                 android:paddingEnd="@dimen/ten_Dimen"
                 android:paddingBottom="@dimen/five_Dimen"

@@ -45,7 +45,7 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
 
     StoriesProgressView storiesProgressView;
     ImageView story_image,story_user_image;
-    TextView story_username,story_created_time;
+    TextView story_username;
     LinearLayout seen_layout;
     TextView seen_count;
     ImageView story_delete;
@@ -55,7 +55,6 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
 
     List<String> imageList;
     List<String> story_Ids;
-    List<Long> storyTimeList;
     String user_Id;
 
     private View.OnTouchListener onTouchListener = new View.OnTouchListener() {
@@ -97,7 +96,6 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
         story_user_image = findViewById(R.id.story_user_image);
         story_image = findViewById(R.id.story_image_view);
         story_username = findViewById(R.id.story_username);
-        story_created_time = findViewById(R.id.story_created_time);
 
         seen_layout = findViewById(R.id.seen_layout_id);
         seen_count = findViewById(R.id.seen_count_id);
@@ -144,11 +142,11 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
             @Override
             public void onClick(View v) {
                 Intent goto_story_view_users = new Intent(Story_view_Activity.this,Story_seen_users_Activity.class);
-//
-//                goto_story_view_users.putExtra("user_id", user_Id);
-//                goto_story_view_users.putExtra("story_id", story_Ids.get(counter));
-//
-//                startActivity(goto_story_view_users);
+
+                goto_story_view_users.putExtra("user_id", user_Id);
+                goto_story_view_users.putExtra("story_id", story_Ids.get(counter));
+
+                startActivity(goto_story_view_users);
 
 
 
@@ -261,7 +259,6 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
 
                         imageList.add(modelStory_1.getImage_url());
                         story_Ids.add(modelStory_1.getStory_Id());
-                        storyTimeList.add(modelStory_1.getTime_start());
 
 
                     }else {
@@ -286,7 +283,6 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
                     Glide.with(getApplicationContext()).load(R.drawable.ic_image).into(story_image);
                 }
 
-                story_created_time.setText(getTimeInterval(storyTimeList.get(counter)));
 
                 add_views(story_Ids.get(counter));
                 seen_user_count(story_Ids.get(counter));
@@ -379,12 +375,6 @@ public class Story_view_Activity extends AppCompatActivity implements StoriesPro
 
 
 
-    }
-
-    private String getTimeInterval(Long time){
-        Date date = new Date(time);
-        Format format = new SimpleDateFormat("yyyy MM dd HH:mm:ss");
-        return format.format(date);
     }
 
 }

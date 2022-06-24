@@ -13,26 +13,26 @@
 
 
 
-        <ImageView
-            android:id="@+id/postedImageOpenId"
-            android:layout_width="@dimen/four_hundred_Dimen"
-            android:layout_height="@dimen/six_hundred_Dimen"
-            android:background="#2E2D2D"
-            android:paddingTop="@dimen/twenty_five_Dimen"
-            android:layout_marginBottom="@dimen/twenty_Dimen"
-            android:paddingStart="@dimen/zero_Dimen"
-            android:paddingEnd="@dimen/zero_Dimen"
-            android:visibility="invisible"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            />
+<!--        <ImageView-->
+<!--            android:id="@+id/postedImageOpenId"-->
+<!--            android:layout_width="@dimen/four_hundred_Dimen"-->
+<!--            android:layout_height="@dimen/six_hundred_Dimen"-->
+<!--            android:background="#2E2D2D"-->
+<!--            android:paddingTop="@dimen/twenty_five_Dimen"-->
+<!--            android:layout_marginBottom="@dimen/twenty_Dimen"-->
+<!--            android:paddingStart="@dimen/zero_Dimen"-->
+<!--            android:paddingEnd="@dimen/zero_Dimen"-->
+<!--            android:visibility="invisible"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            />-->
 
     <LinearLayout
         android:id="@+id/post_Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/post_bg_ok_top"
+        android:background="#D6D6D6"
         >
 
 
@@ -123,13 +123,21 @@
                 />
 
 
-            <ImageView
+<!--            <ImageView-->
+<!--                android:id="@+id/postedImgaeId"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/three_hundred_Dimen"-->
+<!--                android:layout_marginTop="@dimen/five_Dimen"-->
+<!--                android:layout_marginBottom="@dimen/five_Dimen"-->
+<!--                android:minHeight="@dimen/one_hundred_forty_four_Dimen"-->
+<!--                />-->
+            <com.zolad.zoominimageview.ZoomInImageView
                 android:id="@+id/postedImgaeId"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/three_hundred_Dimen"
                 android:layout_marginTop="@dimen/five_Dimen"
                 android:layout_marginBottom="@dimen/five_Dimen"
-                android:minHeight="@dimen/one_hundred_forty_four_Dimen"
+                android:minHeight="@dimen/one_hundred_sixty_Dimen"
                 />
 
             <LinearLayout

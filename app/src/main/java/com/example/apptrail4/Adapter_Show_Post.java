@@ -414,35 +414,39 @@ public class Adapter_Show_Post extends  RecyclerView.Adapter<Adapter_Show_Post.P
             @Override
             public void onClick(View v) {
 
-                holder.postedUserDetailsLayout.setVisibility(View.GONE);
-                holder.postedItemLayout.setVisibility(View.GONE);
-                holder.postedIamgeOpen.setVisibility(View.VISIBLE);
+                Intent postDetailsActivity = new Intent(context,Post_Comments_Activity.class);
+                postDetailsActivity.putExtra("pId",pId);
+                context.startActivity(postDetailsActivity);
 
-                try {
-                    Glide.with(context).load(uploadImage).into(holder.postedIamgeOpen);
-
-                }
-                catch (Exception e) {
-
-                }
-
-
-
-            }
-        });
-
+//                holder.postedUserDetailsLayout.setVisibility(View.GONE);
+//                holder.postedItemLayout.setVisibility(View.GONE);
+//                holder.postedIamgeOpen.setVisibility(View.VISIBLE);
+//
+//                try {
+//                    Glide.with(context).load(uploadImage).into(holder.postedIamgeOpen);
+//
+//                }
+//                catch (Exception e) {
+//
+//                }
 
 
-        holder.postedIamgeOpen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                holder.postedUserDetailsLayout.setVisibility(View.VISIBLE);
-                holder.postedItemLayout.setVisibility(View.VISIBLE);
-                holder.postedIamgeOpen.setVisibility(View.GONE);
 
             }
         });
+
+
+
+//        holder.postedIamgeOpen.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                holder.postedUserDetailsLayout.setVisibility(View.VISIBLE);
+//                holder.postedItemLayout.setVisibility(View.VISIBLE);
+//                holder.postedIamgeOpen.setVisibility(View.GONE);
+//
+//            }
+//        });
 
         holder.postedUserDetailsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -497,7 +501,7 @@ public class Adapter_Show_Post extends  RecyclerView.Adapter<Adapter_Show_Post.P
             currentUser_Iamge = itemView.findViewById(R.id.currentUseriamgeS);
 
             postedIamge = itemView.findViewById(R.id.postedImgaeId);
-            postedIamgeOpen = itemView.findViewById(R.id.postedImageOpenId);
+//            postedIamgeOpen = itemView.findViewById(R.id.postedImageOpenId);
             postDescripton = itemView.findViewById(R.id.photodeccriptionid);
             likecounter = itemView.findViewById(R.id.like_commentShowid);
             commentcounter = itemView.findViewById(R.id.comment_Count_Id);
@@ -519,7 +523,7 @@ public class Adapter_Show_Post extends  RecyclerView.Adapter<Adapter_Show_Post.P
 
 
 
-            postedIamgeOpen.setVisibility(View.GONE);
+//            postedIamgeOpen.setVisibility(View.GONE);
             commentLayout.setVisibility(View.GONE);
             editComment.setVisibility(View.GONE);
             commentPostBtn.setVisibility(View.GONE);

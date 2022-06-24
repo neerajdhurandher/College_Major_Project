@@ -535,7 +535,7 @@ public class Personal_Chat_Activity extends AppCompatActivity {
 
                                     if (response.body().success != 1) {
 
-                                        Toast.makeText(Personal_Chat_Activity.this, "Notification Failed !", Toast.LENGTH_SHORT).show();
+//                                        Toast.makeText(Personal_Chat_Activity.this, "Notification Failed !", Toast.LENGTH_SHORT).show();
 
                                     }
                                 }
